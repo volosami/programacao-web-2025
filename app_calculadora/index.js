@@ -1,6 +1,14 @@
+const express = require('express')
 const calc = require('./calculadora')
+const app = express()
 
-console.log(calc.somar(3,5))
-console.log(calc.subtrair(3,5))
-console.log(calc.multiplicar(3,5))
-console.log(calc.dividir(3,5))
+//requisição chegando na rota raiz = manda mensagem
+app.get('/', (req, res)=>{
+    res.send('Hello, world!')
+})
+
+//usando função arrow
+const PORT = 8080
+app.listen(PORT, ()=>{
+    console.log('app rodando na porta ' + PORT)
+})
