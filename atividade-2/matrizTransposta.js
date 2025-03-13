@@ -1,22 +1,27 @@
 function transporMatriz(A){
-    let linha = A.length
-    let coluna = A[0].length
-    var matrizTransposta = Array.from({ length: coluna }, () => Array(linha).fill(0));
-        for (let i=0;i<linha;i++){
-            let linha=[]
-            for (let j=0;j<coluna;j++){
-                matrizTransposta[j][i] = A[i][j]
-            }
-        }
+	for (let i=0;i<A.length;i++){
+		let linha = ""
+		for (let j=0;j<A[i].length;j++){
+			linha += A[i][j] + "\t"
+		}
+		console.log(linha)
+	}
 
-    return matrizTransposta
+	console.log("\n")
+
+	for (let j=0;j<A[0].length;j++){
+		let linha = ""
+		for (let i=0;i<A.length;i++){
+			linha += A[i][j] + "\t"
+		}
+		console.log(linha)
+	}
 }
 
-var matriz1 = 
-[
-    [1,2],
-    [3,4],
-    [5,6]
+let matriz = [
+	[1, 2],
+	[3, 4],
+	[5, 6]
 ]
 
-var matriz2 = transporMatriz(matriz1)
+transporMatriz(matriz)
